@@ -21,8 +21,8 @@ module.exports = {
         },
       },
       colors: {
-        primary: "#8F3030",
-        secondary: "#20A2BD",
+        primary: "#1A768D",
+        secondary: "#2F2929",
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],

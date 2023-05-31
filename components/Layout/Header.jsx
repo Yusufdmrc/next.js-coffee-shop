@@ -4,16 +4,24 @@ import { FaUser, FaShoppingBasket } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import Search from "../UI/Search";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
+import { useRouter } from "next/router";
 
 const Header = () => {
   const [isSearch, setIsSearch] = useState(false);
   const [isMenu, setIsMenu] = useState(false);
+
+  const router = useRouter();
+
   return (
-    <div className="bg-secondary h-[5rem]">
+    <div
+      className={`h-[5.3rem] z-50 relative ${
+        router.asPath === "/" ? "bg-transparent" : "bg-secondary"
+      }`}
+    >
       <div className="container text-white h-full mx-auto flex items-center justify-between">
         <Logo />
         <nav
-          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-full h-full sm:text-white 
+          className={`sm:static absolute top-0 left-0 sm:w-auto sm:h-auto w-screen h-full sm:text-white 
         text-black sm:bg-transparent bg-white sm:flex hidden ${
           isMenu === true && "!grid place-content-center"
         }
@@ -54,7 +62,7 @@ const Header = () => {
             <FiSearch className="hover:text-primary transition-all" />
           </button>
           <a href="#" className="md:inline-block hidden sm">
-            <button className="btn-primary">Sipariş Ver</button>
+            <button className="btn">Sipariş Ver</button>
           </a>
           <button
             className="sm:hidden inline-block"

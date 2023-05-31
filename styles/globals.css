@@ -13,6 +13,18 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.btn-primary {
+.btn {
   @apply bg-primary text-white cursor-pointer px-[1.8rem] py-[0.5rem] hover:opacity-75 transition-all rounded-lg;
+}
+
+.slick-dots {
+  @apply w-full !flex justify-start;
+}
+
+.slick-dots .slick-active div {
+  @apply bg-primary;
+}
+
+.slick-dots div {
+  @apply !mt-6;
 }
